@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     image: php:7.2-apache
-    container_name: galettes
+    container_name: app
     volumes:
       - ./php:/var/www/html
     ports:
@@ -14,7 +14,7 @@ services:
     tty: true
   db:
     image: mysql:5.7
-    container_name: cuisine
+    container_name: database
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: cuisine
