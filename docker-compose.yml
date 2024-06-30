@@ -8,6 +8,8 @@ services:
       - ./php:/var/www/html
     ports:
       - "8080:80"
+    depends_on:
+      - db
     stdin_open: true
     tty: true
   db:

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 /*---------------*/
 body {
-    background-color: #1b2631;
+    background-color: #1f1f1f;
     color: #fff;
     margin: 0;
 }
@@ -46,7 +46,7 @@ a {
 }
 
 #cookerImg {
-    width: 300px;
+    width: 200px;
 }
 
 #eaterImg {
