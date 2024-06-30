@@ -1,0 +1,91 @@
+/*--- IMPORTS ---*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+/*---------------*/
+body {
+    background-color: #1b2631;
+    color: #fff;
+    margin: 0;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-size: 50px;
+}
+
+.container {
+    font-size: 25px;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: #fff 3px solid;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#cooker {
+    margin-top: 100px;
+}
+
+#cookerImg, #eaterImg{
+   filter: invert(100%);
+}
+
+#cookerImg {
+    width: 300px;
+}
+
+#eaterImg {
+    width: 150px;
+    height: 150px;
+}
+
+#qrcode-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px; height: 160px;
+    background-color: #fff;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    
+    #qrcode {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 716px) {
+    #qrcode-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 160px; height: 160px;
+        background-color: #fff;
+
+        position: inherit;
+
+        margin: 20px auto;
+        
+        #qrcode {
+            width: 150px;
+            height: 150px;
+        }
+    }
+}

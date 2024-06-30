@@ -1,0 +1,95 @@
+/*--- IMPORTS ---*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+/*---------------*/
+
+
+body{
+    background-color: #1b2631;
+    color: #fff;
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+h1{
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-size: 50px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+}
+
+.choice{
+    display: flex;
+    margin-left: 15px;
+}
+
+select{
+    height: 40px;
+    width: 150px;
+    background-color: #1b2631;
+    color: #fff;
+    border: #fff solid 1px;
+    border-radius: 20px;
+    transform: translate(20px, 35px);
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.choice input{
+    font-size: 22px;
+    height: 40px;
+    width: 200px;
+    color: #fff;
+    border: #fff solid 1px;
+    border-radius: 20px;
+    background-color: #1b2631;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    transform: translate(20px, 30px);
+}
+
+textarea{
+    font-size: 22px;
+    height: 60px;
+    width: 350px;
+    color: #fff;
+    border: #fff solid 1px;
+    border-radius: 20px;
+    background-color: #1b2631;
+    transform: translate(20px, 15px);
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+textarea#note{
+    width: 500px;
+}
+
+input#send{
+    font-size: 22px;
+    height: 60px;
+    width: 350px;
+    color: #fff;
+    border: #fff solid 1px;
+    border-radius: 20px;
+    background-color: #1b2631;
+    transform: translate(20px, 15px);
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    cursor: pointer;
+}
+
+#egg {
+    width: 30px;
+    height: 30px;
+}
