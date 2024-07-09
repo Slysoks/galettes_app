@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV adder</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <input type="submit" id="submit">
+    <div id="elements"></div>
+</body>
+<script>
+    const input = document.getElementById('input');
+    const submit = document.getElementById('submit');
+    const elements = document.getElementById('elements');
+
+    var data = [];
+
+    submit.addEventListener('click', addElement.bind(null, input.value));
+
+    function addElement(value) {
+        const element = document.createElement('div');
+        const text = document.createElement('p');
+        const close = document.createElement('button');
+        element.appendChild(text);
+        element.appendChild(close);
+        close.innerHTML = 'X';
+        close.addEventListener('click', () => {
+            element.remove();
+        });
+        text.innerHTML = value;
+        elements.appendChild(element);
+    }
+</script>
+<style>
+    #elements {
+        display: flex;
+        flex-direction: column;
+    }
+    #elements div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px;
+        width: 200px;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    #elements div button {
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    #elements div p {
+        margin: 0;
+    }
+    #input {
+        margin: 5px;
+    }
+    #submit {
+        margin: 5px;
+    }
+</style>
+</html>

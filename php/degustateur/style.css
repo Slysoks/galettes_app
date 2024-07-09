@@ -2,9 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 /*---------------*/
 
+:root {
+    --main-color: #1f1f1f;
+}
 
 body{
-    background-color: #1b2631;
+    background-color: var(--main-color);
     color: #fff;
     margin: 0;
     padding-bottom: 15px;
@@ -34,7 +37,7 @@ h2{
 select{
     height: 40px;
     width: 150px;
-    background-color: #1b2631;
+    background-color: var(--main-color);
     color: #fff;
     border: #fff solid 1px;
     border-radius: 20px;
@@ -52,7 +55,7 @@ select{
     color: #fff;
     border: #fff solid 1px;
     border-radius: 20px;
-    background-color: #1b2631;
+    background-color: var(--main-color);
     border-bottom-right-radius: 0px;
     border-top-left-radius: 0px;
     transform: translate(20px, 30px);
@@ -65,7 +68,7 @@ textarea{
     color: #fff;
     border: #fff solid 1px;
     border-radius: 20px;
-    background-color: #1b2631;
+    background-color: var(--main-color);
     transform: translate(20px, 15px);
     border-bottom-right-radius: 0px;
     border-top-left-radius: 0px;
@@ -82,7 +85,7 @@ input#send{
     color: #fff;
     border: #fff solid 1px;
     border-radius: 20px;
-    background-color: #1b2631;
+    background-color: var(--main-color);
     transform: translate(20px, 15px);
     border-bottom-right-radius: 0px;
     border-top-left-radius: 0px;

@@ -1,59 +1,66 @@
 <?php
-$db = new PDO("mysql:host=localhost;dbname=cuisine;charset=utf8", "admin", "raspbian");
+
+ob_start();
+
+$db = new PDO("mysql:host=db:3306;dbname=cuisine;charset=utf8", "admin", "raspbian");
+
+// If the table don't exist
 
 if(isset($_POST["send"])){
     echo "<meta http-equiv='refresh' content='0'>";
     if(isset($_POST["Jambon"])){
-        $jambon = 1;
+        $jambon = "on";
     }else{
-        $jambon = 0;
+        $jambon = "off";
     }
     if(isset($_POST["Coppa"])){
-        $coppa = 1;
+        $coppa = "on";
     }else{
-        $coppa = 0;
+        $coppa = "off";
     }
     if(isset($_POST["Andouille"])){
-        $andouille = 1;
+        $andouille = "on";
     }else{
-        $andouille = 0;
+        $andouille = "off";
     }
     if(isset($_POST["Saumon"])){
-        $saumon = 1;
+        $saumon = "on";
     }else{
-        $saumon = 0;
+        $saumon = "off";
     }
     if(isset($_POST["Morbier"])){
-        $morbier = 1;
+        $morbier = "on";
     }else{
-        $morbier = 0;
+        $morbier = "off";
     }
     if(isset($_POST["Emmental"])){
-        $emmental = 1;
+        $emmental = "on";
     }else{
-        $emmental = 0;
+        $emmental = "off";
     }
     if(isset($_POST["Comte"])){
-        $comte = 1;
+        $comte = "on";
     }else{
-        $comte = 0;
+        $comte = "off";
     }
     if(isset($_POST["Chevre"])){
-        $chevre = 1;
+        $chevre = "on";
     }else{
-        $chevre = 0;
+        $chevre = "off";
     }
 
     $updateIngredients = $db->prepare("UPDATE ingredients SET Jambon = $jambon, Coppa = $coppa, Andouille = $andouille, Saumon = $saumon, Morbier = $morbier, Emmental = $emmental, Comte = $comte, Chevre = $chevre");
     $updateIngredients->execute();
     header("Location: ./index.html");
 }
+
+ob_flush();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale="on"."off"">
     <title>Modifier La Liste Des Ingr&#233;dients</title>
 </head>
 <body>
@@ -64,17 +71,17 @@ if(isset($_POST["send"])){
             while($viandes = $recupViandes->fetch()){?>
                 <h2>Viandes & Poisson</h2>
                 <div class="container">   
-                    <p>Jambon : <input type="checkbox" name="Jambon"<?php if($viandes["Jambon"] == "1"){ ?> checked <?php } ?></p>
-                    <p>Coppa : <input type="checkbox" name="Coppa"<?php if($viandes["Coppa"] == "1"){ ?> checked <?php } ?></p>
-                    <p>Andouille : <input type="checkbox" name="Andouille"<?php if($viandes["Andouille"] == "1"){ ?> checked <?php } ?></p>
-                    <p>Saumon : <input type="checkbox" name="Saumon"<?php if($viandes["Saumon"] == "1"){ ?> checked <?php } ?></p>
+                    <p>Jambon : <input type="checkbox" name="Jambon"<?php if($viandes["Jambon"] == "on"){ ?> checked <?php } ?></p>
+                    <p>Coppa : <input type="checkbox" name="Coppa"<?php if($viandes["Coppa"] == "on"){ ?> checked <?php } ?></p>
+                    <p>Andouille : <input type="checkbox" name="Andouille"<?php if($viandes["Andouille"] == "on"){ ?> checked <?php } ?></p>
+                    <p>Saumon : <input type="checkbox" name="Saumon"<?php if($viandes["Saumon"] == "on"){ ?> checked <?php } ?></p>
                 </div>
                 <h2>Fromages</h2>
                 <div class="container">   
-                    <p>Morbier : <input type="checkbox" name="Morbier"<?php if($viandes["Morbier"] == "1"){ ?> checked <?php } ?></p>
-                    <p>Emmental : <input type="checkbox" name="Emmental"<?php if($viandes["Emmental"] == "1"){ ?> checked <?php } ?></p>
-                    <p>Comt&#233; : <input type="checkbox" name="Comte"<?php if($viandes["Comte"] == "1"){ ?> checked <?php } ?></p>
-<p>Ch&#232;vre : <input type="checkbox" name="Chevre"<?php if($viandes["Chevre"] == "1"){ ?> checked <?php } ?></p>
+                    <p>Morbier : <input type="checkbox" name="Morbier"<?php if($viandes["Morbier"] == "on"){ ?> checked <?php } ?></p>
+                    <p>Emmental : <input type="checkbox" name="Emmental"<?php if($viandes["Emmental"] == "on"){ ?> checked <?php } ?></p>
+                    <p>Comt&#233; : <input type="checkbox" name="Comte"<?php if($viandes["Comte"] == "on"){ ?> checked <?php } ?></p>
+<p>Ch&#232;vre : <input type="checkbox" name="Chevre"<?php if($viandes["Chevre"] == "on"){ ?> checked <?php } ?></p>
                 </div>
             <?php } ?>
             <input type="submit" value="Confirmer" id="send" name="send">

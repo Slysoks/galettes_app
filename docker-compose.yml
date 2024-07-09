@@ -1,11 +1,9 @@
-version: '3'
-
 services:
   web:
-    image: php:7.2-apache
+    build: .
     container_name: app
     volumes:
-      - ./php:/var/www/html
+      - './php:/var/www/html'
     ports:
       - "8080:80"
     depends_on:
@@ -23,4 +21,20 @@ services:
     ports:
       - "9906:3306"
     volumes:
-      - ./mysql:/var/lib/mysql
+      - './mysql:/var/lib/mysql'
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8081:80
+    depends_on:
+      - db
+    volumes:
+      - './theme/blueberry:/var/www/html/themes/blueberry'

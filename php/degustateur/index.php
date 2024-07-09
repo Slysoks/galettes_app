@@ -1,6 +1,8 @@
 <?php
 
-$db = new PDO("mysql:host=localhost;dbname=cuisine;charset=utf8", "admin", "raspbian");
+ob_start();
+
+$db = new PDO("mysql:host=db:3306;dbname=cuisine;charset=utf8", "admin", "raspbian");
 
 if(isset($_POST["send"])){
     echo "<meta http-equiv='refresh' content='0'>";
@@ -41,6 +43,8 @@ if(isset($_POST["send"])){
     header("Location: ../");
 
 }
+
+ob_end_flush();
 
 ?>
 
