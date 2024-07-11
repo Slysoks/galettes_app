@@ -16,6 +16,8 @@ window.addEventListener('load', function() {
   updateTags(fromageList, fromageOutput);
 });
 
+
+
 viandeInput.addEventListener('keyup', function(event) {
   if (event.key === 'Enter') {
     event.preventDefault();
@@ -24,6 +26,7 @@ viandeInput.addEventListener('keyup', function(event) {
 });
 
 viandeSubmit.addEventListener('click', function() {
+  if (viandeInput.value.trim() === '') return;
   addTag(viandeInput, viandeList, viandeOutput);
 });
 
@@ -35,6 +38,7 @@ fromageInput.addEventListener('keyup', function(event) {
 });
 
 fromageSubmit.addEventListener('click', function() {
+  if (fromageInput.value.trim() === '') return;
   addTag(fromageInput, fromageList, fromageOutput);
 });
 
@@ -49,6 +53,7 @@ function readOutputTags(output) {
 function addTag(input, tagHolder, output) {
   // Get the tag from the input
   let tag = input.value;
+  tag = tag.toLowerCase();
   tag = tag.trim();
 
   // If the tag is empty, do nothing

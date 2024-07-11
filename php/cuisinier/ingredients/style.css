@@ -40,7 +40,7 @@ input[type="text"] {
     }
 }
 
-input[type="submit"] {
+input[type="button"] {
     background-color: var(--main-color);
     color: #fff;
     border: 2px solid transparent;
@@ -93,7 +93,6 @@ input[type="submit"] {
 }
 
 .output {
-    margin-top: 20px;
     width: 100%;
 
     min-height: 20px;
@@ -101,4 +100,16 @@ input[type="submit"] {
 
     &#viandeOutput::before {content: 'Viande: ';}
     &#fromageOutput::before {content: 'Fromage: ';}
+
+    &:first-child {
+        margin-top: 20px;
+    }
+}
+
+#submit {
+    margin-top: 20px;
+    border: 2px solid transparent;
+    border-bottom: 2px solid #fff;
+    background-color: var(--main-color);
+    color: #fff;
 }
