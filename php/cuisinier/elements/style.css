@@ -51,6 +51,12 @@ input[type="submit"] {
     &:active {
         border: 2px solid transparent;
     }
+
+    &#submit {
+        font-size: 20px;
+        margin-top: 10px;
+        width: 100px;
+    }
 }
 
 .list {
