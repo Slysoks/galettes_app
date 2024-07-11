@@ -2,7 +2,7 @@
 
 ob_start();
 
-$db = new PDO("mysql:host=db:3306;dbname=cuisine;charset=utf8", "admin", "raspbian");
+$db = new PDO("mysql:host=localhost;dbname=cuisine;charset=utf8", "root", "");
 
 if(isset($_POST["send"])){
     echo "<meta http-equiv='refresh' content='0'>";
