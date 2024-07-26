@@ -27,17 +27,15 @@ if ($data->rowCount() > 0) {
 // If the user submits by clicking on the input with id "submit"
 // update the ingredients list in the database.
 if(isset($_POST["submit"])) {
-    // Check if "viandeOutput" and "fromageOutput" are set in the POST request
-    $viandes = isset($_POST["viandeOutput"]) ? explode(";", $_POST["viandeOutput"]) : [];
-    $fromages = isset($_POST["fromageOutput"]) ? explode(";", $_POST["fromageOutput"]) : [];
-
     // Update the values in a single query
     // Convert arrays back to CSV format before updating
-    $viandes_csv = implode(";", $viandes);
-    $fromages_csv = implode(";", $fromages);
-    echo('<script>console.log("'.$viandes_csv.'")</script>');
-    $update = $db->prepare("UPDATE ingredients SET viandes = ".$viandes_csv.", fromages = ".$fromages_csv." WHERE id = 1");
-    $update->execute();
+    $viandes_csv = $_POST["viandeOutput"];
+    $fromages_csv = $_POST["fromageOutput"];
+    
+    $update = $db->prepare("UPDATE ingredients SET viandes = ?, fromages = ? WHERE id = 1");
+    $update->execute(array($viandes_csv, $fromages_csv));
+
+    header('Location: ../');
 }
 
 ?>
@@ -68,8 +66,8 @@ if(isset($_POST["submit"])) {
         <div class="list" id="fromageList"></div>
     </section>
     <form method="post">
-        <div class="output" id="viandeOutput" name="viandeOutput"><?= implode(";", $viandes); ?></div>
-        <div class="output" id="fromageOutput" name="fromageOutput"><?= implode(";", $fromages) ?></div>
+        <input class="output" type="text" id="viandeOutput" value="<?= implode(";", $viandes); ?>" name="viandeOutput">
+        <input class="output" type="text" id="fromageOutput" value="<?= implode(";", $fromages); ?>" name="fromageOutput">
         <input type="submit" value="Valider" id="submit" name="submit">
     </form>
 </body>
