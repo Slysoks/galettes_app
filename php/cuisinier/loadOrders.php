@@ -1,6 +1,6 @@
 <?php
 
-$db = new PDO("mysql:host=localhost;dbname=cuisine;charset=utf8", "root", "");
+$db = new PDO("mysql:host=db;dbname=cuisine;charset=utf8", "root", "root");
 
 $recupOrders = $db->query("SELECT * FROM galettes");
 while($orders = $recupOrders->fetch()){

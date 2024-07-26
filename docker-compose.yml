@@ -14,7 +14,7 @@ services:
     image: mysql:5.7
     container_name: database
     environment:
-      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: cuisine
     ports:
       - "9906:3306"

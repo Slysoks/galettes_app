@@ -2,7 +2,7 @@
 
 ob_start();
 
-$db = new PDO("mysql:host=localhost;dbname=cuisine;charset=utf8", "root", "");
+$db = new PDO("mysql:host=db;dbname=cuisine;charset=utf8", "root", "root");
 
 if(isset($_POST["send"])){
     echo "<meta http-equiv='refresh' content='0'>";
@@ -39,8 +39,7 @@ if(isset($_POST["send"])){
         $insert->execute(array($prenom, $viande, $oeuf, $fromage, $accompagnements, $note));
     }
 
-    // Return to the main page
-    header("Location: ../");
+
 
 }
 

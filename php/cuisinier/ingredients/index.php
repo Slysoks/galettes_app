@@ -2,7 +2,7 @@
 
 ob_start();
 
-$db = new PDO("mysql:host=localhost;dbname=cuisine;charset=utf8", "root", "");
+$db = new PDO("mysql:host=db;dbname=cuisine;charset=utf8", "root", "root");
 
 $data = $db->query("SELECT * FROM ingredients");
 
@@ -48,7 +48,7 @@ if(isset($_POST["submit"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="./app.js" defer></script>
-    <title>CSV Ingredients</title>
+    <title>Modifier les ingr&eacute;dients</title>
 </head>
 <body>
 <a href="../"><img src="../../img/back.svg" style="filter: invert(100%); position: absolute;"></a>

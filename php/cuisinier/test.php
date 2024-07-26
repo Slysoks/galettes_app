@@ -2,10 +2,7 @@
 
 ob_start();
 
-$db = new PDO("mysql:host=localhost;dbname=cuisine;charset=utf8", "root", "");
-
-
-
+$db = new PDO("mysql:host=db;dbname=cuisine;charset=utf8", "root", "root");
 
 ob_flush();
 
