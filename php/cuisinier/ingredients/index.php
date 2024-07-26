@@ -6,8 +6,7 @@ $db = new PDO("mysql:host=localhost;dbname=cuisine;charset=utf8", "root", "");
 
 $data = $db->query("SELECT * FROM ingredients");
 
-//TODO: count how many rows are there in the $data array
-if ($data) {
+if ($data->rowCount() > 0) {
     // Get the "viandes" from the table ingredients. The info is stored in a CSV format.
     $recupViandes = $db->query("SELECT viandes FROM ingredients WHERE id = 1");
     $viandes = $recupViandes->fetch(PDO::FETCH_ASSOC);
@@ -17,16 +16,28 @@ if ($data) {
     $recupFromages = $db->query("SELECT fromages FROM ingredients WHERE id = 1");
     $fromages = $recupFromages->fetch(PDO::FETCH_ASSOC);
     $fromages = explode(";", $fromages["fromages"]);
+} else {
+    // If the table is empty, create a new row with empty values.
+    $insert = $db->prepare("INSERT INTO ingredients (id, viandes, fromages) VALUES ('1', '', '')");
+    $insert->execute();
+    $viandes = [];
+    $fromages = [];
 }
 
 // If the user submits by clicking on the input with id "submit"
 // update the ingredients list in the database.
 if(isset($_POST["submit"])) {
-    $viandes = $_POST["viandeOutput"];
-    $fromages = $_POST["fromageOutput"];
+    // Check if "viandeOutput" and "fromageOutput" are set in the POST request
+    $viandes = isset($_POST["viandeOutput"]) ? explode(";", $_POST["viandeOutput"]) : [];
+    $fromages = isset($_POST["fromageOutput"]) ? explode(";", $_POST["fromageOutput"]) : [];
 
     // Update the values in a single query
-    $update = $db->prepare("UPDATE ingredients SET viandes = :viandes, fromages = :fromages WHERE id = 1");
+    // Convert arrays back to CSV format before updating
+    $viandes_csv = implode(";", $viandes);
+    $fromages_csv = implode(";", $fromages);
+    echo('<script>console.log("'.$viandes_csv.'")</script>');
+    $update = $db->prepare("UPDATE ingredients SET viandes = ".$viandes_csv.", fromages = ".$fromages_csv." WHERE id = 1");
+    $update->execute();
 }
 
 ?>
