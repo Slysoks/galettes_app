@@ -1,12 +1,5 @@
 # MIT License
 
-The MIT License is a permissive open-source license that allows you to use, modify, and distribute the software under certain conditions. It is widely used and recognized in the software development community.
-
-To use the MIT License, you can include the following text in your `LICENSE.md` file:
-
-```
-MIT License
-
 Copyright (c) 2024 Slysoks
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,4 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```
