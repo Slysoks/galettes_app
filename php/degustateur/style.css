@@ -46,6 +46,11 @@ select{
     border-top-left-radius: 0px;
     font-size: 18px;
     padding: 5px;
+    text-transform: capitalize;
+
+    option {
+        text-transform: capitalize;
+    }
 }
 
 .choice input{

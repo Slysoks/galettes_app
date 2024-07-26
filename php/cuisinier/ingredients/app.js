@@ -44,7 +44,7 @@ fromageSubmit.addEventListener('click', function() {
 
 function readOutputTags(output) {
   let tags = [];
-  let out = output.textContent;
+  let out = output.value;
   out = out.split(';');
   if (out[0] === '') return [];
   return out;
@@ -66,7 +66,7 @@ function addTag(input, tagHolder, output) {
   list.push(tag);
 
   // Replace the old output with the new one
-  output.textContent = list.join(';');
+  output.value = list.join(';');
   input.value = '';
   updateTags(tagHolder, output);
 } 
@@ -85,7 +85,7 @@ function createTagElement(tag, tagHolder, tagOutput) {
     let tags = readOutputTags(tagOutput);
     let index = tags.indexOf(tag);
     tags.splice(index, 1);
-    tagOutput.textContent = tags.join(';');
+    tagOutput.value = tags.join(';');
     updateTags(tagHolder, tagOutput);
   });
 
@@ -100,7 +100,7 @@ function updateTags(tagHolder, tagOutput) {
   tagHolder.innerHTML = '';
   
   // If there are no tags in the output, do nothing
-  if (tagOutput.textContent.trim() === '') return;
+  if (tagOutput.value.trim() === '') return;
 
   // Main function to create the tags
   let tags = readOutputTags(tagOutput);

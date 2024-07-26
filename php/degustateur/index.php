@@ -73,17 +73,11 @@ ob_end_flush();
                     <?php
                     $recupViandes = $db->query("SELECT * FROM ingredients");
                     while($viandes = $recupViandes->fetch()){
-                        if($viandes["Jambon"]){?>
-                            <option value="Jambon">Jambon</option>
-                        <?php }if($viandes["Coppa"]){?>
-                            <option value="Coppa">Coppa</option>
-                        <?php }if($viandes["Andouille"]){?>
-                            <option value="Andouille">Andouille</option>
-                        <?php }if($viandes["Saumon"]){?>
-                            <option value="Saumon">Saumon</option>
-                        <?php }
+                        $meatOptions = explode(";", $viandes["viandes"]);
+                        foreach ($meatOptions as $option) {
+                            echo "<option value='$option'>$option</option>";
                         }
-                    ?>
+                    }?>
                 </select>
             </div>
             <div class="choice">
@@ -93,20 +87,15 @@ ob_end_flush();
             <div class="choice">
                 <h2>Fromage : </h2>
                 <select name="fromage">
-                <option value="Non">Non</option>
+                    <option value="Non">Non</option>
                     <?php
-                    $recupViandes = $db->query("SELECT * FROM ingredients");
-                    while($viandes = $recupViandes->fetch()){
-                        if($viandes["Morbier"]){?>
-                            <option value="Morbier">Morbier</option>
-                        <?php }if($viandes["Emmental"]){?>
-                            <option value="Emmental">Emmental</option>
-                        <?php }if($viandes["Comte"]){?>
-                            <option value="Comt&#233;">Comt&#233;</option>
-                            <?php }if($viandes["Chevre"]){?>
-                            <option value="Ch&#232;vre">Ch&#232;vre</option>
-                            <?php }
-                        } ?>
+                    $recupFromages = $db->query("SELECT * FROM ingredients");
+                    while($fromages = $recupFromages->fetch()){
+                        $cheeseOptions = explode(";", $fromages["fromages"]);
+                        foreach ($cheeseOptions as $option) {
+                            echo "<option value='$option'>$option</option>";
+                        }
+                    }?>
                 </select>
             </div>
             <div class="choice">
