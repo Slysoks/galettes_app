@@ -53,39 +53,3 @@ a {
     width: 150px;
     height: 150px;
 }
-
-#qrcode-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 160px; height: 160px;
-    background-color: #fff;
-
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    
-    #qrcode {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-@media screen and (max-width: 716px) {
-    #qrcode-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 160px; height: 160px;
-        background-color: #fff;
-
-        position: inherit;
-
-        margin: 20px auto;
-        
-        #qrcode {
-            width: 150px;
-            height: 150px;
-        }
-    }
-}
