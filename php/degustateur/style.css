@@ -101,3 +101,21 @@ input#send{
     width: 30px;
     height: 30px;
 }
+
+@media screen and (max-width: 1200px){
+    .choice {
+        flex-direction: column;
+
+        input, select, textarea {
+            transform: translate(0, -20px);
+        }
+
+        textarea {
+            max-width: 90%;
+        }
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+}
