@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS cuisine;
+
 CREATE TABLE galettes (
   `id` int(11) NOT NULL,
   `prenom` tinytext NOT NULL,
