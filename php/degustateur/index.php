@@ -15,7 +15,7 @@ if(isset($_POST["send"])){
     }
 
     $viande = htmlspecialchars($_POST["viande"]);
-    $oeuf = htmlspecialchars($_POST["egg"]);
+    $oeuf = $_POST["egg"];
     $fromage = htmlspecialchars($_POST["fromage"]);
     $accompagnements = htmlspecialchars($_POST["accompagnements"]);
     $note = htmlspecialchars($_POST["note"]);
@@ -63,7 +63,7 @@ ob_end_flush();
         <form method="post">
             <div class="choice">
                 <h2>Pr&#233;nom : </h2>
-                <input type="text" name="prenom">
+                <input type="text" name="prenom" maxlength="15">
             </div>
             <div class="choice">
                 <h2>Viande & poisson : </h2>
