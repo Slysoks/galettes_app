@@ -1,12 +1,4 @@
-# CC BY-ND License
+# CC BY-NC-ND 4.0 License
 
-This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International License.
+This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit [this link](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
-You are free to:
-- Share — copy and redistribute the material in any medium or format for any purpose, even commercially.
-
-Under the following terms:
-- Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-- NoDerivatives — If you remix, transform, or build upon the material, you may not distribute the modified material.
-
-This is a human-readable summary of (and not a substitute for) the [license](https://creativecommons.org/licenses/by-nd/4.0/).
