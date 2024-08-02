@@ -10,7 +10,11 @@ Ce programme utilise Docker. Pour installer le programme, il vous suffit d'insta
 docker-compose up -d
 ```
 
-Si c'est la toute première fois que vous utilisez ce programme, il vous faudra créer la base de données. Pour ce faire, ouvrez sur un navigateur `phpMyAdmin` en allant sur `localhost:8081` (par défaut) et en vous connectant avec les identifiants suivants : mot de passe `root`, utilisateur `root`. Créez une base de données nommée `cuisine` et importez le fichier `init.sql` dans cette base de données.
+Notez que vous pouvez accéder à un portail `phpMyAdmin` en allant sur le port `8081` de votre machine. Pour accéder à la base de données, utilisez les identifiants suivants : utilisateur `root` et mot de passe `root`. La base de donnée s'initialise automatiquement lors du lancement du programme.
+
+Pour accéder à l'application, il vous suffit d'aller sur le port `8080` de votre machine.
+
+Les ports sont définis par défaut mais restent <b>modifiables</b> dans le fichier `docker-compose.yml`. Pour modifier les ports, faites attention à ne changer que le port de gauche (ex : `8080:80` &rarr; `1234:80` et non ~~`8080:1234`~~).
 
 ## Utilisation
 Pour définir la liste des ingrédients, il faut aller dans la partie cuisinier, puis ajouter les ingrédients souhaités. Pour se faire, utilisez les deux premiers champs de la page. Les deux derniers sont automatiquement mis à jour en fonction des ingrédients ajoutés. Si vous souhaitez ajouter plusieurs ingréients en même temps, vous pouvez directement insérer vos ingrédients dans le champs et les séparant par un `;`, ou les insérer dans les champs du dessous. Exemple : `jambon;saumon;andouille`. Veuillez ne pas mettre d'espace avant et après les `;`. Pour terminer, cliquez sur le bouton `Valider`.
