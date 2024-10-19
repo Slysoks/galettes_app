@@ -8,8 +8,9 @@
     <title>Cuisinier</title>
 </head>
 <body>
-    <a href="../"><img src="../img/back.svg" style="filter: invert(100%); position: absolute;"></a>
+    <a href="../"><img src="../img/back.svg" style="filter: invert(100%); position: absolute; left: 10px;"></a>
     <h1>Les commandes</h1>
+    <img src="../img/expand.svg" id="expand" style="position: absolute; top: 0; right: 0; width: 75px;" />
     <div class="container">
         <table>
             <thead>
@@ -38,6 +39,7 @@
         background-color: #1f1f1f;
         color: #fff;
         margin: 0;
+        padding: 0;
         font-family: "Poppins", sans-serif;
     }
 
@@ -68,6 +70,10 @@
 </style>
 
 <script>
+    document.getElementById("expand").addEventListener("click", () => {
+        document.querySelector("div").requestFullscreen();
+    });
+
     function loadOrders(){
         $("#orders").load("loadOrders.php");
     }
